@@ -2,6 +2,8 @@ name: echo-2
 
 on:
   workflow_dispatch:
+  repository_dispatch:
+    types: [run-again]
 
 jobs:
   echo-2:
