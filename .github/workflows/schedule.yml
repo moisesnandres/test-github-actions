@@ -2,7 +2,7 @@ name: echo-schedule
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '0 0 1 * *' # First day of every month
 
 jobs:
   echo-schedule:
