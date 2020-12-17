@@ -1,9 +1,8 @@
-name: echo-2
+name: echo-schedule
 
 on:
-  workflow_dispatch:
-  repository_dispatch:
-    types: [run-again]
+  schedule:
+    - cron: '* * * * *'
 
 jobs:
   echo-2:
@@ -12,4 +11,4 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Print
-        run: echo hello there again
+        run: echo hello there again from schedule
