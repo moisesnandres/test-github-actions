@@ -17,4 +17,4 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Print
-        run: echo ${{ github.event.inputs.e2eScript }}
+        run: echo ${{ github.event.inputs.text }}
