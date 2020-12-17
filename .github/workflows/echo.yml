@@ -22,3 +22,4 @@ jobs:
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
           repository: moisesnandres/test-github-actions
           event-type: dispatch-echo-2
+          client-payload: '{"text": "hello there again from first workflow"}'
