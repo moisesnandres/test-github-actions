@@ -2,6 +2,11 @@ name: echo
 
 on:
   workflow_dispatch:
+    inputs:
+      text:
+        description: Text
+        required: true
+        default: 'hello there'
 
 jobs:
   echo:
@@ -10,10 +15,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Print
-        run: echo hello there
+        run: echo ${{ github.event.inputs.e2eScript }}
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
           repository: moisesnandres/test-github-actions
-          event-type: run-again
+          event-type: dispatch-echo-2

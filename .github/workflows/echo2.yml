@@ -2,8 +2,13 @@ name: echo-2
 
 on:
   workflow_dispatch:
+    inputs:
+      text:
+        description: Text
+        required: true
+        default: 'hello there again'
   repository_dispatch:
-    types: [run-again]
+    types: [dispatch-echo-2]
 
 jobs:
   echo-2:
@@ -12,4 +17,4 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Print
-        run: echo hello there again
+        run: echo ${{ github.event.inputs.e2eScript }}
