@@ -4,6 +4,8 @@ on:
   workflow_dispatch:
   repository_dispatch:
     types: [run-again]
+  schedule:
+    - cron: '* * * * *'
 
 jobs:
   echo-2:
